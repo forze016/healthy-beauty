@@ -1,6 +1,10 @@
 const server = require('./src/server')
 const PORT = 3001
+const { connection } = require('./src/db')
 
-server.listen(PORT, ()=>{
-    console.log(`Server listen on port ${PORT}`);
+
+connection.sync({force: false, alter: false}).then(()=>{
+    server.listen(PORT, ()=>{
+        console.log(`Server listen on port ${PORT}`);
+    })
 })
