@@ -13,6 +13,7 @@ server.use(cors({
     methods: 'GET, POST, OPTIONS, PUT, DELETE',
     allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept',
 }));
+
 server.use('/', routes)
 
 
